@@ -3,6 +3,8 @@ using System.Linq;
 
 namespace ToDo.Core
 {
+    public delegate void TaskAddedDelegate(Task task);
+    
     public class TaskList
     {
         private List<Task> tasks = new List<Task>();
@@ -14,6 +16,8 @@ namespace ToDo.Core
                 return tasks.Count;
             }
         }
+
+        public event TaskAddedDelegate TaskAdded = delegate { };
 
         public IEnumerable<Task> Tasks
         {
@@ -29,6 +33,12 @@ namespace ToDo.Core
             {
                 return Tasks.OrderBy(t => t.Timestamp).FirstOrDefault();
             }
+        }
+
+        public void AddTask(Task task)
+        {
+            tasks.Add(task);
+            TaskAdded(task);
         }
     }
 }
