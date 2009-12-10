@@ -17,12 +17,23 @@ namespace ToDo.Ui
         {
             InitializeComponent();
             this.taskList = taskList;
-            this.taskList.TaskAdded += UpdateList;
+            WireUpEvents();
         }
 
-        private void UpdateList(Task task)
+        private void WireUpEvents()
+        {
+            taskList.TaskAdded += AddTaskToList;
+            taskList.TaskRemoved += RemoveTaskFromList;
+        }
+
+        private void AddTaskToList(Task task)
         {
             tasksListView.AddObject(task);
+        }
+
+        private void RemoveTaskFromList(Task task)
+        {
+            tasksListView.RemoveObject(task);
         }
 
         private void newTaskTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -38,9 +49,10 @@ namespace ToDo.Ui
 
         private void tasksListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach (var task in tasksListView.SelectedObjects)
+            foreach (var obj in tasksListView.SelectedObjects)
             {
-                tasksListView.RemoveObject(task);
+                var task = obj as Task;
+                if (task != null) taskList.RemoveTask(task);
             }
         }
     }
