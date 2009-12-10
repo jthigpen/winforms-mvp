@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using ToDo.Core;
 
 namespace ToDo.Ui
@@ -58,6 +59,11 @@ namespace ToDo.Ui
                 var task = obj as Task;
                 if (task != null) RemoveTaskRequest(task);
             }
+        }
+
+        public void DisplayView()
+        {
+            Show();
         }
     }
 }

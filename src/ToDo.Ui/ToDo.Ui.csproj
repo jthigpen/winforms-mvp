@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="ControlExtensions.cs" />
     <Compile Include="IToDoListView.cs" />
+    <Compile Include="IView.cs" />
     <Compile Include="ToDoListView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,7 +62,7 @@
       <DependentUpon>ToDoListView.cs</DependentUpon>
     </Compile>
     <Compile Include="ToDoListPresenter.cs" />
-    <Compile Include="Presenter.cs" />
+    <Compile Include="IPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ToDoListView.resx">

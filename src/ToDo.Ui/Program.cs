@@ -22,7 +22,9 @@ namespace ToDo.Ui
             var executor = new BackgroundUnitOfWorkSessionHandlingMagicalExecutor();
             var presenter = new ToDoListPresenter(view, taskList, executor);
 
-            Application.Run(view);
+            presenter.ShowView();
+
+            Application.Run();
         }
     }
 }

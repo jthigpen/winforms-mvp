@@ -3,7 +3,7 @@ using ToDo.Core;
 
 namespace ToDo.Ui
 {
-    public class ToDoListPresenter : Presenter
+    public class ToDoListPresenter : IPresenter
     {
         private IToDoListView view;
         private ITaskList taskList;
@@ -34,6 +34,10 @@ namespace ToDo.Ui
         private void AddTaskRequestHandler(string action)
         {
             executor.Execute( () => taskList.AddTask(new Task(action)));
+        }
+        public void ShowView()
+        {
+            view.DisplayView();
         }
     }
 }

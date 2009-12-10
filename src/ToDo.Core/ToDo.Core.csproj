@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Executor.cs" />
     <Compile Include="IExecutor.cs" />
     <Compile Include="ITaskList.cs" />
     <Compile Include="SystemTime.cs" />
