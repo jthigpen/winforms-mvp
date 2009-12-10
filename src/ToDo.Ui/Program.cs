@@ -18,8 +18,11 @@ namespace ToDo.Ui
             Application.SetCompatibleTextRenderingDefault(false);
 
             var taskList = new TaskList();
+            var view = new ToDoListView();
+            var executor = new BackgroundUnitOfWorkSessionHandlingMagicalExecutor();
+            var presenter = new ToDoListPresenter(view, taskList, executor);
 
-            Application.Run(new ListViewer(taskList));
+            Application.Run(view);
         }
     }
 }

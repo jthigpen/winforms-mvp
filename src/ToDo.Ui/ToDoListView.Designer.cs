@@ -1,6 +1,6 @@
 ﻿namespace ToDo.Ui
 {
-    partial class ListViewer
+    partial class ToDoListView
     {
         /// <summary>
         /// Required designer variable.
@@ -70,14 +70,14 @@
             this.newTaskTextBox.TabIndex = 2;
             this.newTaskTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.newTaskTextBox_KeyPress);
             // 
-            // ListViewer
+            // ToDoListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 517);
             this.Controls.Add(this.newTaskTextBox);
             this.Controls.Add(this.tasksListView);
-            this.Name = "ListViewer";
+            this.Name = "ToDoListView";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.tasksListView)).EndInit();
             this.ResumeLayout(false);

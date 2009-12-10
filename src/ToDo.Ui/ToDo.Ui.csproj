@@ -52,16 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListViewer.cs">
+    <Compile Include="ControlExtensions.cs" />
+    <Compile Include="IToDoListView.cs" />
+    <Compile Include="ToDoListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListViewer.Designer.cs">
-      <DependentUpon>ListViewer.cs</DependentUpon>
+    <Compile Include="ToDoListView.Designer.cs">
+      <DependentUpon>ToDoListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToDoListPresenter.cs" />
+    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ListViewer.resx">
-      <DependentUpon>ListViewer.cs</DependentUpon>
+    <EmbeddedResource Include="ToDoListView.resx">
+      <DependentUpon>ToDoListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

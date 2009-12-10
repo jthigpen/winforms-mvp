@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading;
 
 namespace ToDo.Core
 {
     public delegate void TaskAddedDelegate(Task task);
     public delegate void TaskRemovedDelegate(Task task);
 
-    public class TaskList
+    public class TaskList : ITaskList
     {
         private List<Task> tasks = new List<Task>();
 
@@ -31,6 +31,7 @@ namespace ToDo.Core
 
         public void AddTask(Task task)
         {
+            Thread.Sleep(3000);
             tasks.Add(task);
             TaskAdded(task);
         }

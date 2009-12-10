@@ -45,9 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IExecutor.cs" />
+    <Compile Include="ITaskList.cs" />
     <Compile Include="SystemTime.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BackgroundUnitOfWorkSuperDuperExecutor.cs" />
     <Compile Include="TaskList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
